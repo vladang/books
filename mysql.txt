@@ -1,0 +1,41 @@
+--
+-- База данных: `testovoe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `books`
+--
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `id_book` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_book`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `books_library`
+--
+
+CREATE TABLE IF NOT EXISTS `books_library` (
+  `id_library` int(10) NOT NULL,
+  `id_book` int(10) NOT NULL,
+  KEY `id_library` (`id_library`),
+  KEY `id_book` (`id_book`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `library`
+--
+
+CREATE TABLE IF NOT EXISTS `library` (
+  `id_library` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_library`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
